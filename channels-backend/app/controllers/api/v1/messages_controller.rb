@@ -1,2 +1,2 @@
-class MessagesController < ActionController::API
+class Api::V1::MessagesController < ActionController::API
 end

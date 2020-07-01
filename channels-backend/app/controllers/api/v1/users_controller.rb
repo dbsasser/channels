@@ -1,3 +1,3 @@
-class UsersController < ActionController::API
+class Api::V1::UsersController < ActionController::API
 end
 
