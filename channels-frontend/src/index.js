@@ -4,7 +4,7 @@ import App from './App';
 import {createStore, applyMiddleware, compose} from 'redux';
 import thunk from 'redux-thunk'
 import { Provider } from 'react-redux'
-
+import channelReducer from './reducers/channelReducer'
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 let store = createStore(channelReducer, composeEnhancers(applyMiddleware(thunk)))
