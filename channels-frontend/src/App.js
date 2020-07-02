@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux'
-import { fetchMessages } from './actions/fetchMessages'
+import ChannelContainer from './containers/ChannelContainer'
 
 class App extends React.Component {
   
@@ -13,7 +13,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        App
+        <ChannelContainer />
       </div>
     );
   }
@@ -21,4 +21,4 @@ class App extends React.Component {
 }
 
 
-export default connect(null, {fetchMessages})(App);
+export default connect()(App);
