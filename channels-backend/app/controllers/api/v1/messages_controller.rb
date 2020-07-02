@@ -30,7 +30,7 @@ class Api::V1::MessagesController < ActionController::API
     private
 
     def set_channel
-        @channel = Account.find(params[:channel_id])
+        @channel = Channel.find(params[:channel_id])
     end
 
     def message_params 
