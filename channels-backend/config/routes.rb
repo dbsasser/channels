@@ -6,7 +6,7 @@ Rails.application.routes.draw do
         resources :channels
       end
       resources :channels do 
-        reources :messages
+        resources :messages
       end
     end
   end
