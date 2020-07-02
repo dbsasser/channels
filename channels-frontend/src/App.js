@@ -1,5 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux'
+import { fetchMessages } from './actions/fetchMessages'
 
 class App extends React.Component {
   
