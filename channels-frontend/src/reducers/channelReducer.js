@@ -1,5 +1,10 @@
 export default function channelReducer(state = {messages: []}, action) {
 
-    return state
+    switch (action.type) {
+        case 'FETCH_MESSAGES':
+            return {messages: action.payload}
+        default:
+            return state
+    }
     
 }
