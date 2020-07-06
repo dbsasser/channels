@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Message from '../components/Message'
+import MessageInput from '../components/MessageInput'
 import {fetchMessages} from '../actions/fetchMessages'
 
 
@@ -12,9 +13,14 @@ class ChannelContainer extends Component {
 
     render() {
         return (
+            <>
             <div>
                 {this.props.messages.map(message => <Message message={message} />)}
             </div>
+            <div>
+                <MessageInput />
+            </div>
+            </>
         )
     }
 }
