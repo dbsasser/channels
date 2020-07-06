@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       post '/login', to: 'auth#create'
+      get '/current_user', to: 'auth#show_user'
       resources :users do
         resources :channels
       end
