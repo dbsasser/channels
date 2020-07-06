@@ -5,7 +5,7 @@ import {createStore, applyMiddleware, compose} from 'redux';
 import thunk from 'redux-thunk'
 import { Provider } from 'react-redux'
 import channelReducer from './reducers/channelReducer'
-import {BrowserRouter as Router, Route} from 'react-router-dom'
+import {BrowserRouter as Router, Route, Switch, } from 'react-router-dom'
 import loginForm from './components/loginForm'
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
@@ -15,8 +15,10 @@ ReactDOM.render(
   <Provider store={store}>
     <React.StrictMode>
       <Router>
-        <Route exact path="/login" component={loginForm} />
-        <Route path="/channels/:id" component={App} />
+        <Switch>
+          <Route exact path="/login" component={loginForm} />
+          <Route path="/channels/:id" component={App} />
+        </Switch>
       </Router>
     </React.StrictMode>
   </Provider>,
