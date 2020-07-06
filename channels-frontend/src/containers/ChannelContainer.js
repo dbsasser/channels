@@ -15,12 +15,16 @@ class ChannelContainer extends Component {
     render() {
         return (
             <>
-            <div><SidebarContainer /></div>
-            <div>
-                {this.props.messages.map(message => <Message message={message} />)}
+            <div className="sidenav">
+                <SidebarContainer />
             </div>
-            <div>
-                <MessageInput />
+            <div className="main">
+                <div>
+                    {this.props.messages.map(message => <Message message={message} />)}
+                </div>
+                <div>
+                    <MessageInput />
+                </div>
             </div>
             </>
         )
