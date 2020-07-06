@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import {getCurrentUser} from '../actions/getCurrentUser'
 import User from '../components/User'
+import UsersChannelsList from '../components/UsersChannelsList'
 
 
 class SidebarContainer extends Component {
@@ -14,7 +15,7 @@ class SidebarContainer extends Component {
         return (
             <>
             <User user={this.props.user}/>
-            {this.props.users_channels.map(channel => channel.name)}
+            <UsersChannelsList channels={this.props.users_channels}/>
             </>
         )
     }
