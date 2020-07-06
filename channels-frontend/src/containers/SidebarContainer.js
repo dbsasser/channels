@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import {fetchUsersChannels} from '../actions/fetchUsersChannels'
+import User from '../components/User'
 
 
 class SidebarContainer extends Component {
@@ -12,9 +13,8 @@ class SidebarContainer extends Component {
     render() {
         return (
             <>
-            <div>
             {this.props.users_channels.map(channel => channel.name)}
-            </div>
+            <User user={this.props.user}/>
             </>
         )
     }
@@ -22,7 +22,8 @@ class SidebarContainer extends Component {
 
 const mapStateToProps = state => {
     return {
-        users_channels: state.users_channels
+        users_channels: state.users_channels,
+        user: state.user
     }
 
 }
