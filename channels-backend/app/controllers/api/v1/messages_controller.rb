@@ -34,6 +34,6 @@ class Api::V1::MessagesController < ActionController::API
     end
 
     def message_params 
-        params.require(:memssage).permit(:channel_id, :user_id)
+        params.require(:message).permit(:channel_id, :user_id, :body)
     end
 end
