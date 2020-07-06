@@ -13,7 +13,7 @@ class SidebarContainer extends Component {
         return (
             <>
             <div>
-
+            {this.props.users_channels.map(channel => channel.name)}
             </div>
             </>
         )
