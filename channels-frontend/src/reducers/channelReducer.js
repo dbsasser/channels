@@ -1,4 +1,4 @@
-export default function channelReducer(state = {messages: [], users_channels: []}, action) {
+export default function channelReducer(state = {messages: [], users_channels: [], user: { channels:[] }}, action) {
 
     switch (action.type) {
         case 'FETCH_MESSAGES':
