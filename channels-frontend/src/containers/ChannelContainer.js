@@ -9,8 +9,10 @@ import {fetchMessages} from '../actions/fetchMessages'
 class ChannelContainer extends Component {
 
     componentDidMount() {
-        this.props.fetchMessages()
+        this.props.fetchMessages(this.props.match.params.id)
     }
+
+
 
     render() {
         return (
