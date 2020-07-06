@@ -21,6 +21,13 @@ class loginForm extends Component {
 
     }
 
+    componentDidUpdate(){
+        if(this.props.loggedIn){
+            this.props.history.push("/channels/1")
+        }
+    }
+    
+
     render() {
         return (
             <>
@@ -45,4 +52,10 @@ class loginForm extends Component {
         }
 }
 
-export default connect(null, {login})(loginForm)
+const mapDisptachToProps = state => {
+    return {
+        loggedIn: state.loggedIn
+    }
+}
+
+export default connect(mapDisptachToProps, {login})(loginForm)
