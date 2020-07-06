@@ -1,20 +1,20 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import {fetchUsersChannels} from '../actions/fetchUsersChannels'
+import {getCurrentUser} from '../actions/getCurrentUser'
 import User from '../components/User'
 
 
 class SidebarContainer extends Component {
 
     componentDidMount() {
-        this.props.fetchUsersChannels()
+        this.props.getCurrentUser()
     }
 
     render() {
         return (
             <>
-            {this.props.users_channels.map(channel => channel.name)}
             <User user={this.props.user}/>
+            {this.props.users_channels.map(channel => channel.name)}
             </>
         )
     }
@@ -22,9 +22,9 @@ class SidebarContainer extends Component {
 
 const mapStateToProps = state => {
     return {
-        users_channels: state.users_channels,
+        users_channels: state.user.channels,
         user: state.user
     }
 
 }
-export default connect(mapStateToProps, {fetchUsersChannels})(SidebarContainer)
+export default connect(mapStateToProps, {getCurrentUser})(SidebarContainer)
