@@ -1,4 +1,6 @@
-export default function channelReducer(state = {messages: [], users_channels: [], user: { channels:[] }}, action) {
+import { StaticRouter } from "react-router-dom"
+
+export default function channelReducer(state = {channel_id: '', messages: [], users_channels: [], user: { channels:[] }}, action) {
 
     switch (action.type) {
         case 'FETCH_MESSAGES':
@@ -12,6 +14,18 @@ export default function channelReducer(state = {messages: [], users_channels: []
         
         case 'FETCH_USER':
             return {...state, user: action.payload, loggedIn: true}
+
+        case 'RECIEVE_MESSAGE':
+
+            return{...state, messages: [...state, action.payload]}
+        
+        case 'SET_CHANNEL':
+        
+            return{...state, channel_id: action.payload}
+        
+        case 'ADD_NEW_MESSAGE':
+    
+            return{...state, messages: [...state.messages, action.payload]}
 
             
         default:
