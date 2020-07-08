@@ -27,18 +27,32 @@ class ChatWindow extends Component {
                 {this.props.displayNewMessage(data)}
             }
         })
+
+        this.scrollToBottom();
+    }
+
+    componentDidUpdate() {
+        this.scrollToBottom();
     }
 
     componentWillUnmount() {
         this.ChatChannel.unsubscribe();
     }
 
+    scrollToBottom = () => {
+        this.endOfMessages.scrollIntoView({ behavior: "smooth" });
+      }
 
     render() {
         return (
+            <>
             <div>
                 {this.props.messages.map(message => <Message key={message.id} message={message} />)}
             </div>
+            <div style={{ float:"left", clear: "both" }}
+                   ref={(el) => { this.endOfMessages = el; }}>
+            </div>
+            </>
         )
     }
 }
