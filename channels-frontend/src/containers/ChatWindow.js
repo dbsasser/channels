@@ -40,7 +40,7 @@ class ChatWindow extends Component {
     }
 
     scrollToBottom = () => {
-        this.endOfMessages.scrollIntoView({ behavior: "smooth" });
+        this.endOfMessages.scrollIntoView();
       }
 
     render() {
