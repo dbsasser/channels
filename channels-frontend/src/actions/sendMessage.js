@@ -1,9 +1,10 @@
 export function sendMessage(message) {
     return (dispatch) => {
-        fetch('http://localhost:3000/api/v1/channels/1/messages', {
+        fetch(`http://localhost:3000/api/v1/channels/${message.channel_id}/messages`, {
             method: 'POST', // or 'PUT'
             headers: {
                 'Content-Type': 'application/json',
+                Authorization: `Bearer ${localStorage.token}`,
             },
             body: JSON.stringify(message),
         })
