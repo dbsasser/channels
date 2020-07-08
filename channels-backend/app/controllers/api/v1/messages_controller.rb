@@ -1,6 +1,7 @@
-class Api::V1::MessagesController < ActionController::API
+class Api::V1::MessagesController < ApplicationController
 
     before_action :set_channel
+    skip_before_action :authorized
 
     def index 
         render json: @channel.messages
@@ -13,8 +14,10 @@ class Api::V1::MessagesController < ActionController::API
 
     def create
         @message = @channel.messages.build(message_params)
-        @message.user_id = 1 #Temporary set user until current_user set up
+        @message.user = current_user
         if @message.save
+            serialized_data = ActiveModelSerializers::Adapter::Json.new(MessageSerializer.new(@message)).serializable_hash
+            ChatChannel.broadcast_to(@channel, serialized_data)
             render json: @channel
         else 
             render json: {error: 'Trouble Posting Message' }
