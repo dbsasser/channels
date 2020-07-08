@@ -10,11 +10,11 @@ export function login(user) {
             .then(resp => resp.json())
             .then(result => {
                     localStorage.setItem('token', result.jwt)
-
                     dispatch({
                         type: 'FETCH_USER',
-                        payload: result.user
+                        payload: {user: result.user, channels: result.channels}
                     })
+                    
                 })
             
     }
