@@ -10,6 +10,7 @@ Rails.application.routes.draw do
       resources :channels do 
         resources :messages
       end
+      mount ActionCable.server => '/cable'
     end
   end
 
