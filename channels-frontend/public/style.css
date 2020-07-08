@@ -35,3 +35,9 @@
     .sidenav {padding-top: 15px;}
     .sidenav a {font-size: 14px;}
   }
+
+  .chat-window {
+    height: 75vh;
+    overflow: scroll;
+
+  }
