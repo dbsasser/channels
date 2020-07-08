@@ -1,5 +1,3 @@
-import { StaticRouter } from "react-router-dom"
-
 export default function channelReducer(state = {channel_id: '', messages: [], users_channels: [], user: { channels:[] }}, action) {
 
     switch (action.type) {
