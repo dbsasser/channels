@@ -2,10 +2,13 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import { sendMessage } from '../actions/sendMessage'
 
+
+
 class MessageInput extends Component {
 
     state = {
-        body: ''
+        body: '',
+        channel_id: this.props.channel_id
     }
 
     handleChange = (event) => {
