@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import ChatHeader from '../components/ChatHeader'
 import Message from '../components/Message'
 import {fetchChannel} from '../actions/fetchChannel'
 import {fetchMessages} from '../actions/fetchMessages'
@@ -49,6 +50,9 @@ class ChatWindow extends Component {
         return (
             <>
             <div>
+                <ChatHeader channel={this.props.channel}/>
+            </div>
+            <div className="chat-window">
                 {this.props.messages.map(message => <Message key={message.id} message={message} />)}
             </div>
             <div style={{ float:"left", clear: "both" }}
