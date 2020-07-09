@@ -1,4 +1,4 @@
-export default function channelReducer(state = {channel_id: '', channel: { users: [], messages: []}, messages: [], users_channels: [], user: { channels:[] }}, action) {
+export default function channelReducer(state = {channel_id: '', channel: { users: [], messages: []}, channels: [], messages: [], users_channels: [], user: { channels:[] }}, action) {
 
     switch (action.type) {
         case 'FETCH_MESSAGES':
@@ -28,6 +28,10 @@ export default function channelReducer(state = {channel_id: '', channel: { users
         case 'FETCH_CHANNEL':
         
             return{...state, channel: action.payload}
+
+        case 'FETCH_ALL_CHANNELS':
+    
+            return{...state, channels: action.payload}
 
             
         default:
