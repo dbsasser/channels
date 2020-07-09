@@ -1,4 +1,5 @@
-class Api::V1::ChannelsController < ActionController::API
+class Api::V1::ChannelsController < ApplicationController
+    skip_before_action :authorized
 
     def index 
         @channels = Channel.all
