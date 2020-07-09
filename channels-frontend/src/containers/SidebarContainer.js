@@ -22,8 +22,7 @@ class SidebarContainer extends Component {
     render() {
         return (
             <>
-            <User user={this.props.user}/>
-            <a onClick={this.handleSignOut}>Sign Out</a>
+            <User user={this.props.user} handleSignOut={this.handleSignOut} />
             <UsersChannelsList channels={this.props.users_channels}/>
             </>
         )
