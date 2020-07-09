@@ -27,9 +27,9 @@ class MessageInput extends Component {
         return (
             <div>
                 <form onSubmit={this.handleSubmit}>
-                    <textarea name="body" value={this.state.body} onChange={this.handleChange}></textarea>
+                    <textarea name="body" value={this.state.body} onChange={this.handleChange} className="form-control" style={{ height: 125 }}></textarea>
                     <br/>
-                    <input type="submit"></input>
+                    <input type="submit" className="btn btn-outline-info float-right"></input>
                 </form>
             </div>
         )
