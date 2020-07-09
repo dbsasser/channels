@@ -14,7 +14,7 @@ class ChannelContainer extends Component {
     render() {
         return (
             <>
-            <div className="chat-window">
+            <div className="chat">
                 <ChatWindow key={this.props.match.params.id} channel_id={this.props.match.params.id} />
             </div>
             <div className="message-input">
