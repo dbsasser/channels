@@ -37,7 +37,8 @@
   }
 
   .chat-window {
-    height: 75vh;
+    margin-top: 20px;
+    height: 65vh;
     overflow: scroll;
 
   }
