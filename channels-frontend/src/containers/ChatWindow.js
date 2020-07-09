@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Message from '../components/Message'
+import {fetchChannel} from '../actions/fetchChannel'
 import {fetchMessages} from '../actions/fetchMessages'
 import {displayNewMessage} from '../actions/displayNewMessage'
 import ActionCable from 'actioncable'
@@ -9,6 +10,7 @@ import ActionCable from 'actioncable'
 class ChatWindow extends Component {
 
     componentDidMount() {
+        this.props.fetchChannel(this.props.channel_id)
         this.props.fetchMessages(this.props.channel_id)
         this.cable = ActionCable.createConsumer("ws://localhost:3000/cable");
 
@@ -59,12 +61,14 @@ class ChatWindow extends Component {
 
 const mapStateToProps = state => {
     return {
+        channel: state.channel,
         messages: state.messages
     }
 }
 
 
 const mapDispatchToProps =  {
+            fetchChannel,
             fetchMessages,
             displayNewMessage
         }
