@@ -6,6 +6,7 @@ import {fetchChannel} from '../actions/fetchChannel'
 import {fetchMessages} from '../actions/fetchMessages'
 import {displayNewMessage} from '../actions/displayNewMessage'
 import ActionCable from 'actioncable'
+import {deleteMembership} from '../actions/deleteMembership'
 
 
 class ChatWindow extends Component {
@@ -34,6 +35,14 @@ class ChatWindow extends Component {
         this.scrollToBottom();
     }
 
+    leaveChannel = (event) => {
+       event.preventDefault(); 
+       const membership = this.props.user.memberships.find(membership => membership.channel_id == this.props.channel.id )
+       this.props.deleteMembership(membership.id)
+
+
+    }
+
     componentDidUpdate() {
         this.scrollToBottom();
     }
@@ -47,10 +56,11 @@ class ChatWindow extends Component {
       }
 
     render() {
+        
         return (
             <>
             <div>
-                <ChatHeader channel={this.props.channel}/>
+                <ChatHeader channel={this.props.channel} leaveChannel={this.leaveChannel} />
             </div>
             <div className="chat-window">
                 {this.props.messages.map(message => <Message key={message.id} message={message} />)}
@@ -66,6 +76,7 @@ class ChatWindow extends Component {
 
 const mapStateToProps = state => {
     return {
+        user: state.user,
         channel: state.channel,
         messages: state.messages
     }
@@ -75,7 +86,8 @@ const mapStateToProps = state => {
 const mapDispatchToProps =  {
             fetchChannel,
             fetchMessages,
-            displayNewMessage
+            displayNewMessage,
+            deleteMembership
         }
 
 export default connect(mapStateToProps, mapDispatchToProps )(ChatWindow)
