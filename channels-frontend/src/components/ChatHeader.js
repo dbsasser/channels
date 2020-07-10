@@ -5,7 +5,7 @@ const ChatHeader = ({channel}) => {
     return (
         <>
         <div key={channel.id} className="sticky-top m-10 border-bottom">
-                <h6># channel.name</h6>
+                <h6># {channel.name}</h6>
                 {channel.users.length} Users - {channel.description}
         </div>
         </>           
