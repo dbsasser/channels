@@ -54,10 +54,11 @@ class ChatWindow extends Component {
             </div>
             <div className="chat-window">
                 {this.props.messages.map(message => <Message key={message.id} message={message} />)}
-            </div>
-            <div style={{ float:"left", clear: "both" }}
+                <div style={{ float:"left", clear: "both" }}
                    ref={(el) => { this.endOfMessages = el; }}>
+                </div>            
             </div>
+           
             </>
         )
     }
