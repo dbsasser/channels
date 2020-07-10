@@ -1,4 +1,5 @@
-class Api::V1::MembershipsController < ActionController::API
+class Api::V1::MembershipsController < ApplicationController
+    skip_before_action :authorized
 
     def index 
         @user = User.first #Temporarily set user until current_user is set up
@@ -7,9 +8,9 @@ class Api::V1::MembershipsController < ActionController::API
     end 
 
     def create
+        @channel = Channel.find_by(id: params[:channel_id])
         @membership = Membership.new(membership_params)
-        @channel = Channel.find(params[:id])
-        @membership.user_id = 1 #Temporary set user until current_user set up
+        @membership.user_id = current_user.id
         if @membership.save
             render json: @channel
         else 
