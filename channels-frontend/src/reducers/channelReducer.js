@@ -33,6 +33,10 @@ export default function channelReducer(state = {channel_id: '', channel: { users
     
             return{...state, channels: action.payload}
 
+        case 'ADD_CHANNEL':
+            
+            return{...state, user: {...state.user, channels: [...state.user.channels, action.payload]}}
+
             
         default:
             return state
