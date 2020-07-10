@@ -20,13 +20,13 @@ class Api::V1::MembershipsController < ApplicationController
 
 
     def destroy
-        @membership = Membership.find_by(user_id: params[:id])
+        @membership = Membership.find_by(id: params[:id])
         @membership.destroy
     end
 
     private
 
     def membership_params 
-        params.require(:membership).permit(:channel_id, :user_id)
+        params.require(:membership).permit(:id, :channel_id, :user_id)
     end
 end
