@@ -16,7 +16,7 @@ class ChannelContainer extends Component {
 
     
     render() {
-        let channel_member = this.props.user.channels.some( channel => channel['id'] == this.props.channel_id )
+        let channel_member = this.props.user.channels.some( channel => channel['id'] === this.props.channel_id )
         return (
             <>
             <div className="message-input">
