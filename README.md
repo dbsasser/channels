@@ -1,6 +1,6 @@
 # Channels
 
-Slack-lite
+A lite version of Slack as a single page application. 
 
 ## About
 Channels is the starting point for a Slack clone. It is built on a Ruby on Rails backend, with a React/Redux frontend. Once signed up or logged in to the application, users can view and join different channels/chat-rooms. If a user is a member of a channel, he/she can send messages in the channel. 
@@ -25,6 +25,7 @@ Run`rails db:create` and then `rails db:seed`
 
 - Start Rails Server
 Run `rails -s`
+
 !! This application currently expects the Rails server to use `http://localhost:3000`  !!
 
 
