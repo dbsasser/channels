@@ -12,7 +12,7 @@ export function login(user) {
                     localStorage.setItem('token', result.jwt)
                     dispatch({
                         type: 'FETCH_USER',
-                        payload: {user: result.user, channels: result.channels}
+                        payload: result.user
                     })
                     
                 })
