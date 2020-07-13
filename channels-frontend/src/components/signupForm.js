@@ -23,7 +23,7 @@ class signupForm extends Component {
     }
 
     componentDidUpdate(){
-        if(this.props.loggedIn){
+        if('id' in this.props.user){
             this.props.history.push("/channels/1")
         }
     }
@@ -61,7 +61,7 @@ class signupForm extends Component {
 
 const mapDisptachToProps = state => {
     return {
-        loggedIn: state.loggedIn
+        user: state.user
     }
 }
 
