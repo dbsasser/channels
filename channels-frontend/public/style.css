@@ -46,3 +46,13 @@
   .message-body {
     font-size: 14px;
   }
+
+  .btn-link {
+    font-size: 12px;
+    color: #FFFFFF;
+  }
+
+  .btn-link:hover {
+    color: #FFFFFF;
+    text-decoration: none;
+  }
