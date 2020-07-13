@@ -23,7 +23,7 @@ class SidebarContainer extends Component {
         return (
             <>
             <User user={this.props.user} handleSignOut={this.handleSignOut} />
-            <UsersChannelsList channels={this.props.users_channels}/>
+            <UsersChannelsList channels={this.props.user.channels}/>
             </>
         )
     }
@@ -31,7 +31,6 @@ class SidebarContainer extends Component {
 
 const mapStateToProps = state => {
     return {
-        users_channels: state.user.channels,
         user: state.user
     }
 

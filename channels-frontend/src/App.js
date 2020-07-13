@@ -1,13 +1,13 @@
 import React from 'react';
 import {connect} from 'react-redux'
-import {setChannel} from './actions/setChannel'
+import {fetchChannel} from './actions/fetchChannel'
 import ChannelContainer from './containers/ChannelContainer'
 import SidebarContainer from './containers/SidebarContainer'
 
 class App extends React.Component {
 
-  componentWillMount() {
-    this.props.setChannel(this.props.match.params.id)
+  componentDidMount() {
+    this.props.fetchChannel(this.props.match.params.id)
   }
 
   render() {
@@ -26,4 +26,4 @@ class App extends React.Component {
 }
 
 
-export default connect(null, {setChannel})(App);
+export default connect(null, {fetchChannel})(App);

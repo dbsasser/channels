@@ -14,14 +14,14 @@ class ViewAllChannels extends Component {
 
     render() {
         return (
-            <ChannelListing channels={this.props.channels} />
+            <ChannelListing channels={this.props.allChannels} />
         )
     }
 }
 
 const mapStateToProps = (state) => {
     return {
-        channels: state.channels
+        allChannels: state.allChannels
     }
 }
 

@@ -12,7 +12,7 @@ class Api::V1::MembershipsController < ApplicationController
         @membership = Membership.new(membership_params)
         @membership.user_id = current_user.id
         if @membership.save
-            render json: @channel
+            render json: {channel: @channel, membership: @membership}
         else 
             render json: {error: 'Trouble Joining Channel' }
         end 
