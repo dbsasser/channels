@@ -1,13 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
-import Message from '../components/Message'
-import MessageInput from '../components/MessageInput'
-import AddChannel from '../components/AddChannel'
-import {joinChannel} from '../actions/joinChannel'
-import SidebarContainer from '../containers/SidebarContainer'
 import {setChannel} from '../actions/setChannel'
-import ActionCable from 'actioncable'
 import ChatWindow from './ChatWindow'
 import MessageWindow from './MessageWindow'
 
