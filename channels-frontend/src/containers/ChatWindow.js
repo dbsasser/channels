@@ -21,14 +21,14 @@ class ChatWindow extends Component {
             channel_id: this.props.channel_id
         },{
             connected: () => {
-                console.log("connected!")
+                // console.log("connected!")
             },
             disconnected: () => {
-                console.log("disconnected!")
+                // console.log("disconnected!")
             },
             received: data => {
-                console.log("data recieved!")
-                {this.props.displayNewMessage(data)}
+                // console.log("data recieved!")
+                this.props.displayNewMessage(data)
             }
         })
 
