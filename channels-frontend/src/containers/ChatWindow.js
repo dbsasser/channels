@@ -11,7 +11,6 @@ import {deleteMembership} from '../actions/userActions'
 class ChatWindow extends Component {
 
     componentDidMount() {
-        this.props.fetchChannel(this.props.channel_id)
         this.props.fetchMessages(this.props.channel_id)
         this.cable = ActionCable.createConsumer("ws://localhost:3000/cable");
 
