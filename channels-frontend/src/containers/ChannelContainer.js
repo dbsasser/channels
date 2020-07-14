@@ -10,7 +10,7 @@ import MessageWindow from './MessageWindow'
 class ChannelContainer extends Component {
 
     componentDidMount() {
-        this.props.setChannel()
+        
     }
     
     render() {
