@@ -9,7 +9,7 @@ const ChannelListing = ({channels}) => {
 
         <>
         <div className="card w-50 mx-auto mt-5">
-        <div class="card-header">
+        <div className="card-header">
             All Channels
         </div>
         <div className="card-body">
