@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
-import {setChannel} from '../actions/setChannel'
+import {setChannel} from '../actions/channelActions'
 import ChatWindow from './ChatWindow'
 import MessageWindow from './MessageWindow'
 

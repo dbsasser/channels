@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
 import MessageInput from '../components/MessageInput'
 import AddChannel from '../components/AddChannel'
-import {joinChannel} from '../actions/joinChannel'
+import {joinChannel} from '../actions/userActions'
 
 
 

@@ -2,11 +2,10 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import ChatHeader from '../components/ChatHeader'
 import Message from '../components/Message'
-import {fetchChannel} from '../actions/fetchChannel'
-import {fetchMessages} from '../actions/fetchMessages'
-import {displayNewMessage} from '../actions/displayNewMessage'
+import {fetchChannel} from '../actions/channelActions'
+import {fetchMessages, displayNewMessage} from '../actions/messageActions'
 import ActionCable from 'actioncable'
-import {deleteMembership} from '../actions/deleteMembership'
+import {deleteMembership} from '../actions/userActions'
 
 
 class ChatWindow extends Component {

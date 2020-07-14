@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux'
-import {fetchChannel} from './actions/fetchChannel'
+import {fetchChannel} from './actions/channelActions'
 import ChannelContainer from './containers/ChannelContainer'
 import SidebarContainer from './containers/SidebarContainer'
 

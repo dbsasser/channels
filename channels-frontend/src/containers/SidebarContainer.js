@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import {getCurrentUser} from '../actions/getCurrentUser'
+import {getCurrentUser} from '../actions/userActions'
 import User from '../components/User'
 import UsersChannelsList from '../components/UsersChannelsList'
 
