@@ -36,7 +36,7 @@ class ChatWindow extends Component {
 
     leaveChannel = (event) => {
        event.preventDefault(); 
-       const membership = this.props.user.memberships.find(membership => membership.channel_id == this.props.channel.id )
+       const membership = this.props.user.memberships.find(membership => membership.channel_id === this.props.channel.id )
        this.props.deleteMembership(membership.id)
 
 
